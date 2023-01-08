@@ -1,0 +1,33 @@
+/* Fonts */
+
+@font-face {
+  font-family: "GT-Walsheim";
+  src: url("../assets/fonts/GT\ Walsheim/GT-Walsheim-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT-Walsheim";
+  src: url("../assets/fonts/GT\ Walsheim/GT-Walsheim-Medium.otf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT-Walsheim";
+  src: url("../assets/fonts/GT\ Walsheim/GT-Walsheim-Bold.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: "GT-Walsheim", sans-serif;
+  font-weight: 400;
+  color: #fff;
+}
