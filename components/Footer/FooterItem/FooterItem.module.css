@@ -1,0 +1,11 @@
+.footerItem {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.footerItem span {
+  color: #151313;
+}

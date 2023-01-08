@@ -39,3 +39,42 @@
   transition: 0.3s;
   cursor: pointer;
 }
+
+.allAboutSection {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+}
+.left,
+.right {
+  position: relative;
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.left {
+  padding-left: 5vw;
+}
+.allAboutSection h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 80%;
+  line-height: 90%;
+  font-size: 5em;
+  padding-bottom: 3vh;
+}
+
+.callToActionsSection {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 7px;
+}
+.row {
+  display: flex;
+  column-gap: 7px;
+}
