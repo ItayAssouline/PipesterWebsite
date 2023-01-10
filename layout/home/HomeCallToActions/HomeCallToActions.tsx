@@ -4,7 +4,7 @@ import GirlsEating from "../../../assets/images/temp/GirlsEating.png";
 import Machine from "../../../assets/images/temp/Machine.png";
 
 import styles from "./HomeCallToActions.module.css";
-const HomeCallToActions = () => {
+export const HomeCallToActions = () => {
   return (
     <section className={styles.callToActionsSection}>
       <div className="row">
@@ -29,5 +29,3 @@ const HomeCallToActions = () => {
     </section>
   );
 };
-
-export default HomeCallToActions;
