@@ -1,0 +1,10 @@
+.callToActionsSection {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 7px;
+}
+.row {
+  display: flex;
+  column-gap: 7px;
+}

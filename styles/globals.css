@@ -27,6 +27,7 @@
   padding: 0;
 }
 html {
+  scroll-behavior: smooth;
   font-family: "GT-Walsheim", sans-serif;
   font-weight: 400;
   color: #fff;

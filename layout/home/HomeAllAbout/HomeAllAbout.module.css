@@ -1,0 +1,27 @@
+.allAboutSection {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+}
+.left,
+.right {
+  position: relative;
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.left {
+  padding-left: 5vw;
+}
+.allAboutSection h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 80%;
+  line-height: 90%;
+  font-size: 5em;
+  padding-bottom: 3vh;
+}
