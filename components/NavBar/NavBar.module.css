@@ -1,0 +1,35 @@
+.navIllustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  overflow: hidden;
+}
+
+.sticky {
+  position: fixed;
+}
+.navBar {
+  height: 10vh;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  background-color: #fff;
+}
+.menu {
+  color: #000;
+  display: flex;
+  column-gap: 10px;
+}
+.menu li {
+  list-style: none;
+}
+.left,
+.right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}

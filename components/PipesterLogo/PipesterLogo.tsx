@@ -8,9 +8,9 @@ interface PipesterLogoProps {
 const PipesterLogo = ({ color, style }: PipesterLogoProps) => {
   return (
     <svg
-      style={style}
-      width="461"
-      height="52"
+      style={{ ...style, transition: "0.3s" }}
+      width="100%"
+      height="100%"
       viewBox="0 0 461 52"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

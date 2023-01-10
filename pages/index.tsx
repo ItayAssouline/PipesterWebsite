@@ -1,17 +1,19 @@
-import PipesterIllustration from "../components/PipesterIllustration/PipesterIllustration";
-import PipesterLogo from "../components/PipesterLogo/PipesterLogo";
-import { pipesterColors } from "../theme/colors";
 import heroImage from "../assets/images/PipesterHero.png";
-import GirlsEating from "../assets/images/temp/GirlsEating.png";
 import Bagles from "../assets/images/temp/Bagles.png";
+import GirlsEating from "../assets/images/temp/GirlsEating.png";
 import Machine from "../assets/images/temp/Machine.png";
-import styles from "../styles/Home.module.css";
 import CallToAction from "../components/CallToAction/CallToAction";
 import Footer from "../components/Footer/Footer";
 import NavBar from "../components/NavBar/NavBar";
+import PipesterIllustration from "../components/PipesterIllustration/PipesterIllustration";
+import { pipesterColors } from "../theme/colors";
+
+import { useRef } from "react";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
   console.log(heroImage);
+  const contentRef = useRef<HTMLDivElement | null>(null);
   return (
     <>
       <NavBar />
@@ -62,9 +64,10 @@ export default function Home() {
           <PipesterIllustration
             color={pipesterColors.pink}
             style={{
+              width: "100%",
               position: "absolute",
-              left: "150%",
-              transform: "scale(4)",
+              left: "110%",
+              transform: "scale(3.2)",
             }}
           />
         </div>
