@@ -17,7 +17,7 @@ const NavBar = () => {
   const { scrollY } = useScroll();
   const [isAtTop, setIsAtTop] = useState(true);
 
-  const [isNavOpen, setIsNavOpen] = useState(true);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
