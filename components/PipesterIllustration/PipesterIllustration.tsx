@@ -4,15 +4,21 @@ import { PipesterBrandColor } from "../../types/general.types";
 interface PipesterIllustration {
   color: PipesterBrandColor;
   style?: React.CSSProperties;
+  className?: string;
 }
 
-const PipesterIllustration = ({ color, style }: PipesterIllustration) => {
+const PipesterIllustration = ({
+  color,
+  style,
+  className,
+}: PipesterIllustration) => {
   return (
     <svg
       style={style}
       viewBox="0 0 3606 1374"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <path
         d="M154.573 370.636C130.644 429.1 133.094 495.911 133.094 581.374C133.303 610.938 136.24 637.86 141.441 662.458C141.535 662.902 141.63 663.345 141.725 663.787C142.239 666.172 142.775 668.535 143.331 670.877C212.366 961.424 603.825 918.502 504.861 1100.36C505.506 1099.18 506.152 1098 506.797 1096.82C526.287 1060.33 536.754 1013.06 540.012 998.321C564.49 887.602 486.214 880.294 337.096 768.239C284.185 728.479 266.802 677.091 271.256 623.882L271.255 623.881C173.008 577.289 104.125 482.018 163.968 350.69C160.498 357.156 157.416 363.715 154.677 370.382L154.573 370.636Z"

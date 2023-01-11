@@ -4,7 +4,8 @@ import { pipesterColors } from "../../theme/colors";
 import PipesterIllustration from "../PipesterIllustration/PipesterIllustration";
 import PipesterLogo from "../PipesterLogo/PipesterLogo";
 import StickyBox from "react-sticky-box";
-
+import MenuIcon from "../../assets/icons/MenuIcon.svg";
+import Image from "next/image";
 import styles from "./NavBar.module.css";
 
 interface NavBarProps {
@@ -15,6 +16,9 @@ const NavBar = () => {
   const navBarRef = useRef<HTMLDivElement | null>(null);
   const { scrollY } = useScroll();
   const [isAtTop, setIsAtTop] = useState(true);
+
+  const [isNavOpen, setIsNavOpen] = useState(true);
+
   useEffect(() => {
     return scrollY.onChange((latest) => {
       if (latest > 0) {
@@ -38,15 +42,21 @@ const NavBar = () => {
           <div className={styles.left}>
             <PipesterLogo
               color={pipesterColors.blue}
-              style={{
-                marginTop: !isAtTop ? 0 : "-20vh",
-                width: "50%",
-                zIndex: 10,
-              }}
+              className={`${styles.logo} ${isAtTop ? styles.atTop : ""}`}
             />
           </div>
           <div className={styles.right}>
-            <ul className={styles.menu}>
+            <Image
+              className={styles.hamburgerIcon}
+              onClick={() => {
+                setIsNavOpen((prev) => !prev);
+              }}
+              src={MenuIcon.src}
+              alt={"Hamburger menu icon"}
+              width={20}
+              height={20}
+            />
+            <ul className={`${styles.menu} ${isNavOpen ? "" : styles.hidden}`}>
               <li>Menu</li>
               <li>Shops</li>
               <li>About</li>

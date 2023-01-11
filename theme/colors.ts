@@ -6,6 +6,7 @@ interface PipesterColorsType {
   yellow: PipesterBrandColor;
   brown: PipesterBrandColor;
   orange: PipesterBrandColor;
+  green: PipesterBrandColor;
 }
 export const pipesterColors: PipesterColorsType = {
   blue: {
@@ -43,5 +44,12 @@ export const pipesterColors: PipesterColorsType = {
     normal: "#F57931",
     main: "#FEAE80",
     bright: "#FFD9C2",
+  },
+  green: {
+    dark: "#051803",
+    median: "#5E7D0D",
+    normal: "#BCDA36",
+    main: "#DFF36F",
+    bright: "#F4FFB5",
   },
 };

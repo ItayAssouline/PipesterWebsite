@@ -20,12 +20,7 @@ export const HomeAllAbout = () => {
       <div className={styles.right}>
         <PipesterIllustration
           color={pipesterColors.pink}
-          style={{
-            width: "100%",
-            position: "absolute",
-            left: "110%",
-            transform: "scale(3.2)",
-          }}
+          className={styles.illustration}
         />
       </div>
     </section>

@@ -25,3 +25,56 @@
   font-size: 5em;
   padding-bottom: 3vh;
 }
+
+.illustration {
+  width: 100%;
+  position: absolute;
+  left: 110%;
+  transform: scale(3.2);
+}
+@media only screen and (max-width: 768px) {
+  .allAboutSection {
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .allAboutSection h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 95%;
+    line-height: 90%;
+    font-size: 3.3em;
+    padding-bottom: 3vh;
+    margin-left: 3vw;
+  }
+  .allAboutSection p {
+    font-size: 1.3em;
+    width: 85%;
+    margin-left: 3vw;
+  }
+  .left {
+    flex: 1.5;
+  }
+  .right {
+    flex: 1;
+  }
+  .left,
+  .right {
+    position: relative;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .illustration {
+    left: 0;
+    top: 0;
+    offset-anchor: start;
+    padding-top: 20%;
+  }
+}

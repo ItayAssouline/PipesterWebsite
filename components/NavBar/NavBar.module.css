@@ -33,3 +33,38 @@
   align-items: center;
   padding: 20px;
 }
+.hamburgerIcon {
+  display: none;
+}
+.logo {
+  width: 50%;
+  z-index: 10;
+}
+.logo.atTop {
+  margin-top: -20vh;
+}
+@media only screen and (max-width: 768px) {
+  .logo {
+    width: 100%;
+  }
+  .hamburgerIcon {
+    display: block;
+  }
+  .menu {
+    width: 100%;
+    flex-direction: column;
+    column-gap: 10px;
+    display: flex;
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    background-color: #ffffff;
+  }
+  .menu.hidden {
+    display: none;
+  }
+
+  .menu li {
+    padding: 20px 10px;
+  }
+}

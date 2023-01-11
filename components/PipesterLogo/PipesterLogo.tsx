@@ -4,8 +4,9 @@ import { PipesterBrandColor } from "../../types/general.types";
 interface PipesterLogoProps {
   color: PipesterBrandColor;
   style?: React.CSSProperties;
+  className?: string;
 }
-const PipesterLogo = ({ color, style }: PipesterLogoProps) => {
+const PipesterLogo = ({ color, style, className }: PipesterLogoProps) => {
   return (
     <svg
       style={{ ...style, transition: "0.3s" }}
@@ -14,6 +15,7 @@ const PipesterLogo = ({ color, style }: PipesterLogoProps) => {
       viewBox="0 0 461 52"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <path
         d="M26.1139 -0.000144826L25.3311 3.54785L34.9054 5.6736L35.6882 2.1256L26.1139 -0.000144826Z"
