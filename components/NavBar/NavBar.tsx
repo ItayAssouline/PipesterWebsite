@@ -1,16 +1,11 @@
-import { useScroll } from "framer-motion";
-import React, { MutableRefObject, useEffect, useRef, useState } from "react";
+import { motion, useScroll } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import StickyBox from "react-sticky-box";
 import { pipesterColors } from "../../theme/colors";
+import HamburgerButton from "../HamburgerButton/HamburgerButton";
 import PipesterIllustration from "../PipesterIllustration/PipesterIllustration";
 import PipesterLogo from "../PipesterLogo/PipesterLogo";
-import StickyBox from "react-sticky-box";
-import MenuIcon from "../../assets/icons/MenuIcon.svg";
-import Image from "next/image";
 import styles from "./NavBar.module.css";
-
-interface NavBarProps {
-  contentRef?: MutableRefObject<HTMLDivElement | null>;
-}
 
 const NavBar = () => {
   const navBarRef = useRef<HTMLDivElement | null>(null);
@@ -27,7 +22,9 @@ const NavBar = () => {
         setIsAtTop(true);
       }
     });
-  }, []);
+  }, [scrollY]);
+
+  const handleClick = () => setIsNavOpen((prev) => !prev);
 
   return (
     <>
@@ -46,22 +43,17 @@ const NavBar = () => {
             />
           </div>
           <div className={styles.right}>
-            <Image
-              className={styles.hamburgerIcon}
-              onClick={() => {
-                setIsNavOpen((prev) => !prev);
-              }}
-              src={MenuIcon.src}
-              alt={"Hamburger menu icon"}
-              width={20}
-              height={20}
-            />
-            <ul className={`${styles.menu} ${isNavOpen ? "" : styles.hidden}`}>
+            <HamburgerButton onClick={handleClick} isOpen={isNavOpen} />
+            <motion.ul
+              className={`${styles.menu} ${isNavOpen ? "" : styles.hidden}`}
+              initial={{ height: "0" }}
+              animate={{ height: isNavOpen ? "auto" : "0" }}
+            >
               <li>Menu</li>
               <li>Shops</li>
               <li>About</li>
               <li>Loyalty Program</li>
-            </ul>
+            </motion.ul>
           </div>
         </div>
       </StickyBox>
