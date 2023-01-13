@@ -20,12 +20,12 @@
   text-transform: lowercase;
 }
 .productImage {
-  height: 80vw;
-  width: 85vw;
+  height: 30vh;
+  width: 30vh;
   border-radius: 25px;
   background-size: cover;
   background-position: center;
-  box-shadow: 0 5px 3px rgba(0, 0, 0, 0.075);
+  box-shadow: 0 5px 3px rgba(0, 0, 0, 0.057);
 }
 
 @media only screen and (max-width: 768px) {
@@ -35,6 +35,8 @@
     align-items: flex-start;
     flex-direction: column-reverse;
     margin-top: 5vh;
+    height: 80vw;
+    width: 85vw;
   }
   .left {
     padding-top: 10px;
