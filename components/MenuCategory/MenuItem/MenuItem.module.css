@@ -20,8 +20,8 @@
   text-transform: lowercase;
 }
 .productImage {
-  height: 30vh;
-  width: 30vh;
+  height: 20vh;
+  width: 20vh;
   border-radius: 25px;
   background-size: cover;
   background-position: center;

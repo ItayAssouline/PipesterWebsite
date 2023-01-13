@@ -5,6 +5,7 @@ import PageHeader from "../components/PageHeader/PageHeader";
 
 import styles from "../styles/menu.module.css";
 import MenuCategory from "../components/MenuCategory/MenuCategory";
+import { fakeMenu } from "../assets/data/fakeData/fakeMenu";
 
 const MenuPageColor = pipesterColors.yellow;
 
@@ -14,9 +15,9 @@ const Menu = () => {
       <NavBar color={MenuPageColor} />
       <PageHeader color={MenuPageColor} text={"menu"} />
       <section className={styles.menu}>
-        <MenuCategory />
-        <MenuCategory />
-        <MenuCategory />
+        {fakeMenu.map((category) => {
+          return <MenuCategory key={category.title} category={category} />;
+        })}
       </section>
     </>
   );

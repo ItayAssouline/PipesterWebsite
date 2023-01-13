@@ -26,6 +26,14 @@
 .menu li {
   list-style: none;
 }
+.menu li a:active,
+.menu li a:link,
+.menu li a:hover,
+.menu li a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
 .left,
 .right {
   height: 100%;
