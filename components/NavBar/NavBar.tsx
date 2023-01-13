@@ -1,13 +1,19 @@
 import { motion, useScroll } from "framer-motion";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import StickyBox from "react-sticky-box";
 import { pipesterColors } from "../../theme/colors";
+import { PipesterBrandColor } from "../../types/general.types";
 import HamburgerButton from "../HamburgerButton/HamburgerButton";
 import PipesterIllustration from "../PipesterIllustration/PipesterIllustration";
 import PipesterLogo from "../PipesterLogo/PipesterLogo";
 import styles from "./NavBar.module.css";
 
-const NavBar = () => {
+interface NavBarProps {
+  color: PipesterBrandColor;
+}
+
+const NavBar = ({ color }: NavBarProps) => {
   const navBarRef = useRef<HTMLDivElement | null>(null);
   const { scrollY } = useScroll();
   const [isAtTop, setIsAtTop] = useState(true);
@@ -30,7 +36,7 @@ const NavBar = () => {
     <>
       <div className={styles.navIllustration}>
         <PipesterIllustration
-          color={pipesterColors.blue}
+          color={color}
           style={{ transform: "scale(1.3)" }}
         />
       </div>
@@ -38,7 +44,7 @@ const NavBar = () => {
         <div className={`${styles.navBar}`} ref={navBarRef}>
           <div className={styles.left}>
             <PipesterLogo
-              color={pipesterColors.blue}
+              color={color}
               className={`${styles.logo} ${isAtTop ? styles.atTop : ""}`}
             />
           </div>
@@ -49,10 +55,18 @@ const NavBar = () => {
               initial={{ height: "0" }}
               animate={{ height: isNavOpen ? "auto" : "0" }}
             >
-              <li>Menu</li>
-              <li>Shops</li>
-              <li>About</li>
-              <li>Loyalty Program</li>
+              <li>
+                <Link href={"/menu"}>Menu</Link>
+              </li>
+              <li>
+                <Link href={"/shope"}>Shops</Link>
+              </li>
+              <li>
+                <Link href={"/about"}>About</Link>
+              </li>
+              <li>
+                <Link href={"/loyalty-program"}>Loyalty Program</Link>
+              </li>
             </motion.ul>
           </div>
         </div>

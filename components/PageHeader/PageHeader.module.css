@@ -1,0 +1,11 @@
+.pageHeader {
+  color: #000;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pageHeaderTitle {
+  text-transform: uppercase;
+  font-size: 4em;
+}
