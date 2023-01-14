@@ -59,7 +59,7 @@ const NavBar = ({ color }: NavBarProps) => {
                 <Link href={"/menu"}>Menu</Link>
               </li>
               <li>
-                <Link href={"/shope"}>Shops</Link>
+                <Link href={"/shops"}>Shops</Link>
               </li>
               <li>
                 <Link href={"/about"}>About</Link>

@@ -32,12 +32,22 @@
   .menuItem {
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column-reverse;
     margin-top: 5vh;
-    height: 80vw;
-    width: 85vw;
+    flex: 1;
+    width: auto;
   }
+
+  .productImage {
+    height: 15vh;
+    width: 15vh;
+    border-radius: 25px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.057);
+  }
+
   .left {
     padding-top: 10px;
   }

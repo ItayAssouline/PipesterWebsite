@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./MenuItem.module.css";
 import { PipesterProduct } from "../../../types/general.types";
+import styles from "./MenuItem.module.css";
 
 interface MenuItemProps {
   product: PipesterProduct;

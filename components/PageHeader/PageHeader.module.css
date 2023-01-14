@@ -9,3 +9,9 @@
   text-transform: uppercase;
   font-size: 4em;
 }
+
+@media only screen and (max-width: 768px) {
+  .pageHeader {
+    height: 20vh;
+  }
+}

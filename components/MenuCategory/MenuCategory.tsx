@@ -1,5 +1,6 @@
 import React from "react";
 import { PipesterMenuCategory } from "../../types/general.types";
+import PipesterTitle from "../PipesterTitle/PipesterTitle";
 import styles from "./MenuCategory.module.css";
 import MenuItem from "./MenuItem/MenuItem";
 
@@ -9,7 +10,7 @@ interface MenuCategoryProps {
 const MenuCategory = ({ category }: MenuCategoryProps) => {
   return (
     <div className={styles.menuCategory}>
-      <h5 className={styles.menuCategoryTitle}>{category.title}</h5>
+      <PipesterTitle title={category.title} />
       {category.products.map((product) => {
         return <MenuItem key={product.title} product={product} />;
       })}

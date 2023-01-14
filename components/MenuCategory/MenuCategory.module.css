@@ -1,10 +1,14 @@
 .menuCategory {
   padding-top: 5vh;
+  display: flex;
+  flex-direction: column;
 }
-.menuCategoryTitle {
-  font-size: 3em;
-  text-transform: uppercase;
-  width: 100%;
-  padding-bottom: 10px;
-  border-bottom: 3px solid #eeeeee;
+
+@media only screen and (max-width: 768px) {
+  .menuCategory {
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* column-gap: auto; */
+    justify-content: space-around;
+  }
 }
