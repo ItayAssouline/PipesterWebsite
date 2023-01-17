@@ -5,10 +5,17 @@ interface PipesterLogoProps {
   color: PipesterBrandColor;
   style?: React.CSSProperties;
   className?: string;
+  onClick?: () => void;
 }
-const PipesterLogo = ({ color, style, className }: PipesterLogoProps) => {
+const PipesterLogo = ({
+  color,
+  style,
+  className,
+  onClick,
+}: PipesterLogoProps) => {
   return (
     <svg
+      onClick={onClick}
       style={{ ...style, transition: "0.3s" }}
       width="100%"
       height="100%"

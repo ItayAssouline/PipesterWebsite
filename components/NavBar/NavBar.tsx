@@ -1,8 +1,9 @@
 import { motion, useScroll } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import StickyBox from "react-sticky-box";
-import { pipesterColors } from "../../theme/colors";
+import { useWindowDimensions } from "../../hooks";
 import { PipesterBrandColor } from "../../types/general.types";
 import HamburgerButton from "../HamburgerButton/HamburgerButton";
 import PipesterIllustration from "../PipesterIllustration/PipesterIllustration";
@@ -14,11 +15,13 @@ interface NavBarProps {
 }
 
 const NavBar = ({ color }: NavBarProps) => {
+  const { height, width } = useWindowDimensions();
+
   const navBarRef = useRef<HTMLDivElement | null>(null);
   const { scrollY } = useScroll();
   const [isAtTop, setIsAtTop] = useState(true);
 
-  const [isNavOpen, setIsNavOpen] = useState(true);
+  const [isNavOpen, setIsNavOpen] = useState(width && width > 768);
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
@@ -32,6 +35,12 @@ const NavBar = ({ color }: NavBarProps) => {
 
   const handleClick = () => setIsNavOpen((prev) => !prev);
 
+  const router = useRouter();
+
+  const logoClick = () => {
+    router.push("/");
+  };
+
   return (
     <>
       <div className={styles.navIllustration}>
@@ -44,6 +53,7 @@ const NavBar = ({ color }: NavBarProps) => {
         <div className={`${styles.navBar}`} ref={navBarRef}>
           <div className={styles.left}>
             <PipesterLogo
+              onClick={logoClick}
               color={color}
               className={`${styles.logo} ${isAtTop ? styles.atTop : ""}`}
             />
