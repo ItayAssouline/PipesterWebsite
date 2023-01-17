@@ -6,6 +6,7 @@ import PageHeader from "../components/PageHeader/PageHeader";
 import styles from "../styles/menu.module.css";
 import MenuCategory from "../components/MenuCategory/MenuCategory";
 import { fakeMenu } from "../assets/data/fakeData/fakeMenu";
+import Footer from "../components/Footer/Footer";
 
 const MenuPageColor = pipesterColors.yellow;
 
@@ -19,6 +20,7 @@ const Menu = () => {
           return <MenuCategory key={category.title} category={category} />;
         })}
       </section>
+      <Footer />
     </>
   );
 };

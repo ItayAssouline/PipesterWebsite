@@ -1,12 +1,10 @@
-import React from "react";
-import { pipesterColors } from "../theme/colors";
 import NavBar from "../components/NavBar/NavBar";
 import PageHeader from "../components/PageHeader/PageHeader";
 import PipesterTitle from "../components/PipesterTitle/PipesterTitle";
-import Machine from "../assets/images/temp/Machine.png";
-import Aventura from "../assets/images/temp/Aventura.jpg";
 import SingleShop from "../components/SingleShop/SingleShop";
+import { pipesterColors } from "../theme/colors";
 
+import Footer from "../components/Footer/Footer";
 import styles from "../styles/shops.module.css";
 
 const ShopsPageColor = pipesterColors.pink;
@@ -18,6 +16,7 @@ const Shops = () => (
       <PipesterTitle title={"Find shops"} />
       <SingleShop />
     </section>
+    <Footer />
   </>
 );
 
