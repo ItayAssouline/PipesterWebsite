@@ -2,11 +2,11 @@ import React from "react";
 import NavBar from "../components/NavBar/NavBar";
 import { pipesterColors } from "../theme/colors";
 import PageHeader from "../components/PageHeader/PageHeader";
-
-import styles from "../styles/menu.module.css";
 import MenuCategory from "../components/MenuCategory/MenuCategory";
 import { fakeMenu } from "../assets/data/fakeData/fakeMenu";
 import Footer from "../components/Footer/Footer";
+
+import styles from "../styles/menu.module.css";
 
 const MenuPageColor = pipesterColors.yellow;
 

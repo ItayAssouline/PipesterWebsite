@@ -1,8 +1,9 @@
 import React from "react";
 import { PipesterMenuCategory } from "../../types/general.types";
 import PipesterTitle from "../PipesterTitle/PipesterTitle";
-import styles from "./MenuCategory.module.css";
 import MenuItem from "./MenuItem/MenuItem";
+
+import styles from "./MenuCategory.module.css";
 
 interface MenuCategoryProps {
   category: PipesterMenuCategory;

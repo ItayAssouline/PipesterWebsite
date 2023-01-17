@@ -6,9 +6,6 @@
 
 @media only screen and (max-width: 768px) {
   .menuCategory {
-    flex-direction: row;
-    flex-wrap: wrap;
-    /* column-gap: auto; */
     justify-content: space-around;
   }
 }
