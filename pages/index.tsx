@@ -10,7 +10,6 @@ export default function Home() {
     <>
       <NavBar color={HomeColor} />
       <HomeHero />
-      <PipesterIllustration color={pipesterColors.blue} />
       <HomeAllAbout />
       <HomeCallToActions />
       <Footer />
