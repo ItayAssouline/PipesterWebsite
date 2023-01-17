@@ -14,7 +14,7 @@ const PipesterIllustration = ({
 }: PipesterIllustration) => {
   return (
     <svg
-      style={style}
+      style={{ height: "100%", width: "100%", ...style }}
       viewBox="0 0 3606 1374"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
