@@ -1,5 +1,6 @@
 import Footer from "../components/Footer/Footer";
 import NavBar from "../components/NavBar/NavBar";
+import PipesterIllustration from "../components/PipesterIllustration/PipesterIllustration";
 import { HomeAllAbout, HomeCallToActions, HomeHero } from "../layout/home/";
 import { pipesterColors } from "../theme/colors";
 
@@ -9,6 +10,7 @@ export default function Home() {
     <>
       <NavBar color={HomeColor} />
       <HomeHero />
+      <PipesterIllustration color={pipesterColors.blue} />
       <HomeAllAbout />
       <HomeCallToActions />
       <Footer />

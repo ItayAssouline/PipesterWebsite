@@ -4,6 +4,7 @@ import heroImage from "../../../assets/images/PipesterHero.png";
 
 import styles from "./HomeHero.module.css";
 import TransitioningText from "../../../components/TransitioningText/TransitioningText";
+import PipesterIllustration from "../../../components/PipesterIllustration/PipesterIllustration";
 
 const heroDuos = [
   {
