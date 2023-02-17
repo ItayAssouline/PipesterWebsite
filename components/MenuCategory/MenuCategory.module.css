@@ -1,11 +1,23 @@
 .menuCategory {
-  padding-top: 5vh;
+  padding-top: 3%;
+  padding-bottom: 5%;
+}
+
+.menuCategoryItems {
+  padding-top: 3%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  column-gap: 3%;
+  row-gap: 30px;
 }
 
 @media only screen and (max-width: 768px) {
   .menuCategory {
-    justify-content: space-around;
+    padding-bottom: 10%;
+  }
+  .menuCategoryItems {
+    column-gap: 5%;
+    row-gap: 15px;
   }
 }

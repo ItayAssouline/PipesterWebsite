@@ -12,9 +12,11 @@ const MenuCategory = ({ category }: MenuCategoryProps) => {
   return (
     <div className={styles.menuCategory}>
       <PipesterTitle title={category.title} />
-      {category.products.map((product) => {
-        return <MenuItem key={product.title} product={product} />;
-      })}
+      <div className={styles.menuCategoryItems}>
+        {category.products.map((product) => {
+          return <MenuItem key={product.title} product={product} />;
+        })}
+      </div>
     </div>
   );
 };

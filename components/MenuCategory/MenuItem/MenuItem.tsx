@@ -6,19 +6,15 @@ import styles from "./MenuItem.module.css";
 interface MenuItemProps {
   product: PipesterProduct;
 }
+
 const MenuItem = ({ product }: MenuItemProps) => {
   return (
     <div className={styles.menuItem}>
-      <div className={styles.left}>
-        <span className={styles.productTitle}>{product.title}</span>
-        <span className={styles.productDescription}>{product.description}</span>
-      </div>
-      <div className={styles.right}>
-        <div
-          className={styles.productImage}
-          style={{ backgroundImage: `url("${product.imageUrl}")` }}
-        ></div>
-      </div>
+      <div
+        className={styles.productImage}
+        style={{ backgroundImage: `url("${product.imageUrl}")` }}
+      ></div>
+      <span className={styles.productTitle}>{product.title}</span>
     </div>
   );
 };
