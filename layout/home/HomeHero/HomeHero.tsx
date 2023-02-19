@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { pipesterColors } from "../../../theme/colors";
 import heroImage from "../../../assets/images/PipesterHero.png";
 
@@ -6,89 +6,76 @@ import styles from "./HomeHero.module.css";
 import TransitioningText from "../../../components/TransitioningText/TransitioningText";
 import PipesterIllustration from "../../../components/PipesterIllustration/PipesterIllustration";
 
-const heroDuos = [
-  {
-    leftText: {
-      text: "Way",
-      backgroundColor: pipesterColors.orange.normal,
-      textColor: pipesterColors.yellow.main,
-    },
-    rightText: {
-      text: "Enjoy",
-      backgroundColor: pipesterColors.brown.main,
-      textColor: pipesterColors.brown.dark,
-    },
-  },
-  {
-    leftText: {
-      text: "Taste",
-      backgroundColor: pipesterColors.blue.bright,
-      textColor: pipesterColors.blue.median,
-    },
-    rightText: {
-      text: "Experience",
-      backgroundColor: pipesterColors.green.main,
-      textColor: pipesterColors.green.dark,
-    },
-  },
-  {
-    leftText: {
-      text: "Brand",
-      backgroundColor: pipesterColors.pink.median,
-      textColor: pipesterColors.pink.bright,
-    },
-    rightText: {
-      text: "Love",
-      backgroundColor: pipesterColors.pink.bright,
-      textColor: pipesterColors.pink.median,
-    },
-  },
-];
+export interface HomeHeroProps {
+  image: string;
+  heroTitle: string;
+  heroText: string;
+  videoButtonText: string;
+  buzzwords: Buzzword[];
+}
+interface Buzzword {
+  buzzword: string;
+  color: string;
+  backgroundColor: string;
+  buzzword2: string;
+  color2: string;
+  backgroundColor2: string;
+}
 
-export const HomeHero = () => {
-  const [text, setText] = useState("asd0i");
+export const HomeHero = ({
+  heroTitle,
+  heroText,
+  image,
+  videoButtonText,
+  buzzwords,
+}: HomeHeroProps) => {
   const [textDuoIndex, setTextDuoIndex] = useState(0);
+
+  const intervalRef = useRef<ReturnType<typeof setInterval>>();
+
   useEffect(() => {
-    setInterval(() => {
-      setTextDuoIndex((prev) => (prev + 1) % heroDuos.length);
+    // Create a new interval
+    intervalRef.current = setInterval(() => {
+      setTextDuoIndex((prev) => (prev + 1) % buzzwords.length);
     }, 2500);
+
+    // Clean up the interval on unmount
+    return () => {
+      clearInterval(intervalRef.current);
+    };
   }, []);
+
+  const titleTextArray = useMemo(() => {
+    return heroText.split("$");
+  }, [heroText]);
 
   return (
     <header
       className={styles.header}
       style={{
-        backgroundImage: `linear-gradient(to bottom, rgba(54, 30, 16, 0.3), rgba(54, 30, 16, 0.3)), url("${heroImage.src}")`,
+        backgroundImage: `linear-gradient(to bottom, rgba(54, 30, 16, 0.3), rgba(54, 30, 16, 0.3)), url("${image}")`,
       }}
     >
-      <h2 className={styles.title}>Introducing Pipester</h2>
+      <h2 className={styles.title}>{heroTitle}</h2>
       <h2 className={styles.heroTitle}>
-        A new{" "}
+        {titleTextArray[0]}
         <TransitioningText
-          key={heroDuos[textDuoIndex].leftText.text}
-          text={heroDuos[textDuoIndex].leftText.text}
-          backgroundColor={heroDuos[textDuoIndex].leftText.backgroundColor}
-          textColor={heroDuos[textDuoIndex].leftText.textColor}
-        />{" "}
-        to{" "}
+          key={buzzwords[textDuoIndex].buzzword}
+          text={buzzwords[textDuoIndex].buzzword}
+          backgroundColor={buzzwords[textDuoIndex].backgroundColor}
+          textColor={buzzwords[textDuoIndex].color}
+        />
+        {titleTextArray[1]}
         <TransitioningText
-          key={heroDuos[textDuoIndex].rightText.text}
-          text={heroDuos[textDuoIndex].rightText.text}
-          backgroundColor={heroDuos[textDuoIndex].rightText.backgroundColor}
-          textColor={heroDuos[textDuoIndex].rightText.textColor}
+          key={buzzwords[textDuoIndex].buzzword2}
+          text={buzzwords[textDuoIndex].buzzword2}
+          backgroundColor={buzzwords[textDuoIndex].backgroundColor2}
+          textColor={buzzwords[textDuoIndex].color2}
           reverse
         />
       </h2>
 
-      <h5
-        className={styles.watchVideo}
-        onClick={() => {
-          setText("adssss");
-          console.log(text);
-        }}
-      >
-        Watch video
-      </h5>
+      <h5 className={styles.watchVideo}>{videoButtonText}</h5>
     </header>
   );
 };

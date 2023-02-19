@@ -1,31 +1,41 @@
-import CallToAction from "../../../components/CallToAction/CallToAction";
+import CallToAction, {
+  ICallToAction,
+} from "../../../components/CallToAction/CallToAction";
 import Bagles from "../../../assets/images/temp/Bagles.png";
 import GirlsEating from "../../../assets/images/temp/GirlsEating.png";
 import Machine from "../../../assets/images/temp/Machine.png";
 
 import styles from "./HomeCallToActions.module.css";
-export const HomeCallToActions = () => {
+import { useEffect } from "react";
+
+export interface CallToActionsProps {
+  callToActions: ICallToAction[];
+}
+export const HomeCallToActions = ({ callToActions }: CallToActionsProps) => {
   return (
     <section className={styles.callToActionsSection}>
-      <div className="row">
-        <CallToAction
-          backgroundImage={GirlsEating.src}
-          title={"Special is everyone"}
-          subtitle={"Highlight what makes you, you."}
-        />
-      </div>
-      <div className={styles.row}>
-        <CallToAction
-          backgroundImage={Bagles.src}
-          title={"Menu"}
-          subtitle={"Highlight what makes you, you."}
-        />
-        <CallToAction
-          backgroundImage={Machine.src}
-          title={"Shops"}
-          subtitle={"Highlight what makes you, you."}
-        />
-      </div>
+      {/* <CallToAction
+        backgroundImage={GirlsEating.src}
+        title={"Special is everyone"}
+        subtitle={"Highlight what makes you, you."}
+        isFullWidth
+        link={"#"}
+      />
+      <CallToAction
+        backgroundImage={Bagles.src}
+        title={"Menu"}
+        subtitle={"Highlight what makes you, you."}
+        link={"#"}
+      />
+      <CallToAction
+        backgroundImage={Machine.src}
+        title={"Shops"}
+        subtitle={"Highlight what makes you, you."}
+        link={"#"}
+      /> */}
+      {callToActions.map((cta) => (
+        <CallToAction {...cta} key={cta.title} />
+      ))}
     </section>
   );
 };
