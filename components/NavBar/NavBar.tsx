@@ -76,9 +76,6 @@ const NavBar = ({ color }: NavBarProps) => {
               <li>
                 <Link href={"/about"}>About</Link>
               </li>
-              <li>
-                <Link href={"/loyalty-program"}>Loyalty Program</Link>
-              </li>
             </motion.ul>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavBar from "../components/NavBar/NavBar";
 import { pipesterColors } from "../theme/colors";
 import PageHeader from "../components/PageHeader/PageHeader";
@@ -11,10 +11,17 @@ import { GetServerSideProps } from "next";
 import { PipesterMenuCategory } from "../types/general.types";
 import axios from "axios";
 import { parseMenu } from "../utils/menu.utils";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const MenuPageColor = pipesterColors.yellow;
 
 const Menu = ({ menu }: { menu: PipesterMenuCategory[] }) => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
     <>
       <NavBar color={MenuPageColor} />

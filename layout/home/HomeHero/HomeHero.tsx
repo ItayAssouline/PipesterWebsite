@@ -1,10 +1,7 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import { pipesterColors } from "../../../theme/colors";
-import heroImage from "../../../assets/images/PipesterHero.png";
+import { useEffect, useMemo, useRef, useState } from "react";
 
-import styles from "./HomeHero.module.css";
 import TransitioningText from "../../../components/TransitioningText/TransitioningText";
-import PipesterIllustration from "../../../components/PipesterIllustration/PipesterIllustration";
+import styles from "./HomeHero.module.css";
 
 export interface HomeHeroProps {
   image: string;
