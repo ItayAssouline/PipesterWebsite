@@ -7,7 +7,7 @@ export const parseMenu = (menu: any[]): PipesterMenuCategory[] => {
         return {
           title: product.attributes.productName,
           description: "",
-          imageUrl: `http://localhost:1337${product.attributes.mainImage.data.attributes.url}`,
+          imageUrl: product.attributes.mainImage.data.attributes.url,
         };
       }
     );

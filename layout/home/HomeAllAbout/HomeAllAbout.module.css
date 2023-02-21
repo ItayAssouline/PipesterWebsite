@@ -14,7 +14,7 @@
   font-size: 1.3em;
 }
 .right {
-  flex: 3;
+  flex: 1;
   position: relative;
 }
 
