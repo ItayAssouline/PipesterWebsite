@@ -61,7 +61,7 @@ export const getServerSideProps: GetServerSideProps<AboutPageProps> = async (
       bigTitle,
       title,
       paragraph,
-      imageNextToText: `imageNextToText.data.attributes.url`,
+      imageNextToText: imageNextToText.data.attributes.url,
     },
   };
 };
