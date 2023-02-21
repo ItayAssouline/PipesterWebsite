@@ -9,7 +9,7 @@ interface MenuItemProps {
 
 const MenuItem = ({ product }: MenuItemProps) => {
   return (
-    <div className={styles.menuItem}>
+    <div className={styles.menuItem} data-aos="fade">
       <div
         className={styles.productImage}
         style={{ backgroundImage: `url("${product.imageUrl}")` }}

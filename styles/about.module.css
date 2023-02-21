@@ -1,0 +1,49 @@
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 25vw;
+}
+.title {
+  color: #000;
+  font-weight: bold;
+  font-size: 4em;
+  text-align: center;
+  width: 55%;
+  padding: 5% 0;
+  line-height: 90%;
+}
+.content {
+  display: flex;
+  column-gap: 50px;
+  padding-bottom: 5%;
+}
+.image {
+  flex: 1;
+}
+.imageNextToText {
+  height: 100%;
+}
+.text {
+  color: #000;
+  white-space: pre-line;
+  display: inline-block;
+  font-size: 1.5rem;
+  flex: 4;
+}
+
+@media only screen and (max-width: 768px) {
+  .about {
+    padding: 0 5vw;
+  }
+  .title {
+    font-size: 3em;
+    text-align: center;
+    width: 100%;
+    line-height: 95%;
+  }
+  .image {
+    display: none;
+  }
+}

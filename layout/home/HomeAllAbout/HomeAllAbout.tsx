@@ -1,21 +1,23 @@
 import React from "react";
 import PipesterIllustration from "../../../components/PipesterIllustration/PipesterIllustration";
 import { pipesterColors } from "../../../theme/colors";
+import { GetServerSideProps } from "next";
 
 import styles from "./HomeAllAbout.module.css";
 
-export const HomeAllAbout = () => {
+export interface HomeAboutProps {
+  title: string;
+  paragraph: string;
+}
+export const HomeAllAbout = ({ title, paragraph }: HomeAboutProps) => {
   return (
     <section
       className={styles.allAboutSection}
       style={{ backgroundColor: pipesterColors.pink.main }}
     >
       <div className={styles.left}>
-        <h2>Whats Pipester all about?</h2>
-        <p>
-          Combining the taste of a product made by a professional chocolatier
-          with an outstanding robotic show with every dessert served.
-        </p>
+        <h2>{title}</h2>
+        <p>{paragraph}</p>
       </div>
       <div className={styles.right}>
         <PipesterIllustration

@@ -2,17 +2,21 @@ import React from "react";
 import { PipesterBrandColor } from "../../../types/general.types";
 import styles from "./ShopOption.module.css";
 
-interface ShopOptionProps {
-  color: PipesterBrandColor;
-  text: string;
+export interface ShopAction {
+  action: string;
+  link: string;
+  color: string;
 }
-const ShopOption = ({ color, text }: ShopOptionProps) => {
+const ShopOption = ({ color, action, link }: ShopAction) => {
   return (
     <span
       className={styles.shopOption}
-      style={{ backgroundColor: color.normal }}
+      style={{ backgroundColor: color }}
+      onClick={() => {
+        window.open(link);
+      }}
     >
-      {text}
+      {action}
     </span>
   );
 };
