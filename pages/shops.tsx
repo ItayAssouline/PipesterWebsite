@@ -11,6 +11,7 @@ import styles from "../styles/shops.module.css";
 import { GetServerSideProps } from "next";
 import axios from "axios";
 import apiClient from "../utils/apiClient";
+import Head from "next/head";
 
 const ShopsPageColor = pipesterColors.pink;
 
@@ -19,6 +20,13 @@ interface ShopsProps {
 }
 const Shops = ({ shops }: ShopsProps) => (
   <>
+    <Head>
+      <title>Shops</title>
+      <meta
+        name="description"
+        content="In these places you can find all of Pipester chocolate factories"
+      ></meta>
+    </Head>
     <NavBar color={ShopsPageColor} />
     <PageHeader color={pipesterColors.pink} text={"Shops"} />
     <section className={styles.shops}>

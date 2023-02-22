@@ -12,6 +12,7 @@ import styles from "../styles/menu.module.css";
 import { PipesterMenuCategory } from "../types/general.types";
 import apiClient from "../utils/apiClient";
 import { parseMenu } from "../utils/menu.utils";
+import Head from "next/head";
 
 const MenuPageColor = pipesterColors.yellow;
 
@@ -23,6 +24,13 @@ const Menu = ({ menu }: { menu: PipesterMenuCategory[] }) => {
 
   return (
     <>
+      <Head>
+        <title>Menu</title>
+        <meta
+          name="description"
+          content="Pipester's awesome menu includes incredibly tasty desserts, made by our chocolate factory"
+        ></meta>
+      </Head>
       <NavBar color={MenuPageColor} />
       <PageHeader color={MenuPageColor} text={"menu"} />
       <section className={styles.menu}>

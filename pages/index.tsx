@@ -1,5 +1,6 @@
 import axios from "axios";
 import { GetServerSideProps } from "next";
+import Head from "next/head";
 import Footer from "../components/Footer/Footer";
 import NavBar from "../components/NavBar/NavBar";
 import { HomeAllAbout, HomeCallToActions, HomeHero } from "../layout/home/";
@@ -13,6 +14,13 @@ const HomeColor = pipesterColors.blue;
 export default function Home(props: HomeStaticData) {
   return (
     <>
+      <Head>
+        <title>Pipester</title>
+        <meta
+          name="description"
+          content="Indulge in a unique snacking experience with Pipester Chocolate Factory! Our vending machines serve premium chocolate desserts and a visually stunning robotic show. Perfect for a quick snack or for capturing that epic moment you've always dreamed of."
+        ></meta>
+      </Head>
       <NavBar color={HomeColor} />
       <HomeHero {...props.HomeHeroProps} />
       <HomeAllAbout {...props.HomeAboutProps} />

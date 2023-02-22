@@ -7,6 +7,7 @@ import axios from "axios";
 import { GetServerSideProps } from "next";
 import styles from "../styles/about.module.css";
 import apiClient from "../utils/apiClient";
+import Head from "next/head";
 
 const MenuPageColor = pipesterColors.brown;
 
@@ -24,6 +25,9 @@ const AboutPage = ({
 }: AboutPageProps) => {
   return (
     <>
+      <Head>
+        <title>About Pipester</title>
+      </Head>
       <NavBar color={MenuPageColor} />
       <PageHeader color={MenuPageColor} text={bigTitle} />
       <section className={styles.about}>
