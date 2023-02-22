@@ -1,11 +1,19 @@
 .header {
   height: 95vh;
   background-size: cover;
+  background-repeat: no-repeat;
+  /* background: red; */
   background-position: center;
+  position: relative;
+}
+
+.heroContent {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  z-index: 3;
 }
 .title {
   text-transform: uppercase;

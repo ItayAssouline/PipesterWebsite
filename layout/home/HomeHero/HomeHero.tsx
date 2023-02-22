@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-
+import Image from "next/image";
 import TransitioningText from "../../../components/TransitioningText/TransitioningText";
 import styles from "./HomeHero.module.css";
+import NextBackgroundImage from "../../../components/NextBackgroundImage/NextBackgroundImage";
 
 export interface HomeHeroProps {
   image: string;
@@ -47,32 +48,35 @@ export const HomeHero = ({
   }, [heroText]);
 
   return (
-    <header
-      className={styles.header}
-      style={{
-        backgroundImage: `linear-gradient(to bottom, rgba(54, 30, 16, 0.3), rgba(54, 30, 16, 0.3)), url("${image}")`,
-      }}
-    >
-      <h2 className={styles.title}>{heroTitle}</h2>
-      <h2 className={styles.heroTitle}>
-        {titleTextArray[0]}
-        <TransitioningText
-          key={buzzwords[textDuoIndex].buzzword}
-          text={buzzwords[textDuoIndex].buzzword}
-          backgroundColor={buzzwords[textDuoIndex].backgroundColor}
-          textColor={buzzwords[textDuoIndex].color}
-        />
-        {titleTextArray[1]}
-        <TransitioningText
-          key={buzzwords[textDuoIndex].buzzword2}
-          text={buzzwords[textDuoIndex].buzzword2}
-          backgroundColor={buzzwords[textDuoIndex].backgroundColor2}
-          textColor={buzzwords[textDuoIndex].color2}
-          reverse
-        />
-      </h2>
+    <header className={styles.header}>
+      <NextBackgroundImage
+        image={image}
+        background={
+          "linear-gradient(0deg, rgba(82, 45, 30, 0.3), rgba(82, 45, 30, 0.3))"
+        }
+      />
+      <div className={styles.heroContent}>
+        <h2 className={styles.title}>{heroTitle}</h2>
+        <h2 className={styles.heroTitle}>
+          {titleTextArray[0]}
+          <TransitioningText
+            key={buzzwords[textDuoIndex].buzzword}
+            text={buzzwords[textDuoIndex].buzzword}
+            backgroundColor={buzzwords[textDuoIndex].backgroundColor}
+            textColor={buzzwords[textDuoIndex].color}
+          />
+          {titleTextArray[1]}
+          <TransitioningText
+            key={buzzwords[textDuoIndex].buzzword2}
+            text={buzzwords[textDuoIndex].buzzword2}
+            backgroundColor={buzzwords[textDuoIndex].backgroundColor2}
+            textColor={buzzwords[textDuoIndex].color2}
+            reverse
+          />
+        </h2>
 
-      <h5 className={styles.watchVideo}>{videoButtonText}</h5>
+        <h5 className={styles.watchVideo}>{videoButtonText}</h5>
+      </div>
     </header>
   );
 };

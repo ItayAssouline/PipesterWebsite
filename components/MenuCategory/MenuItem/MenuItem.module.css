@@ -1,5 +1,7 @@
 .menuItem {
   width: 30%;
+  /* overflow: hidden; */
+  position: relative;
 }
 
 .productTitle {
@@ -18,6 +20,8 @@
   border-radius: 50%;
   background-size: cover;
   background-position: center;
+  overflow: hidden;
+  position: relative;
 }
 
 @media only screen and (max-width: 768px) {

@@ -14,25 +14,6 @@ export interface CallToActionsProps {
 export const HomeCallToActions = ({ callToActions }: CallToActionsProps) => {
   return (
     <section className={styles.callToActionsSection}>
-      {/* <CallToAction
-        backgroundImage={GirlsEating.src}
-        title={"Special is everyone"}
-        subtitle={"Highlight what makes you, you."}
-        isFullWidth
-        link={"#"}
-      />
-      <CallToAction
-        backgroundImage={Bagles.src}
-        title={"Menu"}
-        subtitle={"Highlight what makes you, you."}
-        link={"#"}
-      />
-      <CallToAction
-        backgroundImage={Machine.src}
-        title={"Shops"}
-        subtitle={"Highlight what makes you, you."}
-        link={"#"}
-      /> */}
       {callToActions.map((cta) => (
         <CallToAction {...cta} key={cta.title} />
       ))}

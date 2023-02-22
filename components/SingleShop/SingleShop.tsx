@@ -1,10 +1,7 @@
-import Aventura from "../../assets/images/temp/Aventura.jpg";
-import Machine from "../../assets/images/temp/Machine.png";
-import { pipesterColors } from "../../theme/colors";
 import Image from "next/image";
 
-import styles from "./SingleShop.module.css";
 import ShopOption, { ShopAction } from "./ShopOption/ShopOption";
+import styles from "./SingleShop.module.css";
 
 export interface SingleShopsProps {
   images: string[];
@@ -18,7 +15,7 @@ const SingleShop = ({ images, actions, name }: SingleShopsProps) => {
       <div className={styles.images}>
         {images.map((image) => (
           <div className={styles.singleImageContainer} key={image}>
-            <img src={image} width={1000} height={1000} alt="" />
+            <Image src={image} width={1000} height={1000} alt="" />
           </div>
         ))}
       </div>
