@@ -1,8 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import Image from "next/image";
+import NextBackgroundImage from "../../../components/NextBackgroundImage/NextBackgroundImage";
 import TransitioningText from "../../../components/TransitioningText/TransitioningText";
 import styles from "./HomeHero.module.css";
-import NextBackgroundImage from "../../../components/NextBackgroundImage/NextBackgroundImage";
 
 export interface HomeHeroProps {
   image: string;

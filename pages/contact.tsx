@@ -8,24 +8,19 @@ import Head from "next/head";
 import styles from "../styles/generalPage.module.css";
 import apiClient from "../utils/apiClient";
 
-const MenuPageColor = pipesterColors.brown;
+const MenuPageColor = pipesterColors.purple;
 
-interface AboutPageProps {
+interface ContactPageProps {
   bigTitle: string;
   title: string;
   paragraph: string;
   imageNextToText: string;
 }
-const AboutPage = ({
-  bigTitle,
-  title,
-  paragraph,
-  imageNextToText,
-}: AboutPageProps) => {
+const ContactPage = ({ bigTitle, title, paragraph }: ContactPageProps) => {
   return (
     <>
       <Head>
-        <title>About Pipester</title>
+        <title>{bigTitle}</title>
       </Head>
       <NavBar color={MenuPageColor} />
       <PageHeader color={MenuPageColor} text={bigTitle} />
@@ -37,16 +32,7 @@ const AboutPage = ({
           {title}
         </h2>
         <div className={styles.content}>
-          <div className={styles.image}>
-            <img
-              src={imageNextToText}
-              className={styles.imageNextToText}
-              alt=""
-            />
-          </div>
-          <span className={styles.text} style={{ textAlign: "left" }}>
-            {paragraph}
-          </span>
+          <span className={styles.text}>{paragraph}</span>
         </div>
       </section>
       <Footer />
@@ -54,7 +40,7 @@ const AboutPage = ({
   );
 };
 
-export const getServerSideProps: GetServerSideProps<AboutPageProps> = async (
+export const getServerSideProps: GetServerSideProps<ContactPageProps> = async (
   context
 ) => {
   const { bigTitle, title, paragraph, imageNextToText } = (
@@ -63,12 +49,13 @@ export const getServerSideProps: GetServerSideProps<AboutPageProps> = async (
 
   return {
     props: {
-      bigTitle,
-      title,
-      paragraph,
+      bigTitle: "Contact us",
+      title: "get in touch with us: contact us today!",
+      paragraph:
+        "We are revolutionizing the market with our innovative and immersive vending machine experiences. We serve premium desserts crafted by professional chocolatiers, accompanied by a visually stunning robotic show. \n\nemail:\n tel:",
       imageNextToText: imageNextToText.data.attributes.url,
     },
   };
 };
 
-export default AboutPage;
+export default ContactPage;

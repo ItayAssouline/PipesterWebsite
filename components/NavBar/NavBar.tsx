@@ -76,6 +76,15 @@ const NavBar = ({ color }: NavBarProps) => {
               <li>
                 <Link href={"/about"}>About</Link>
               </li>
+              <li>
+                <Link href={"/contact"}>Contact us</Link>
+              </li>
+              <li>
+                <Link href={"/careers"}>Careers</Link>
+              </li>
+              <li>
+                <Link href={"/social-impact"}>Social impact</Link>
+              </li>
             </motion.ul>
           </div>
         </div>
