@@ -61,21 +61,19 @@ export const getServerSideProps: GetServerSideProps<socialImpactProps> = async (
   context
 ) => {
   const { bigTitle, title, paragraph, icons } = (
-    await apiClient.get("about?populate=deep")
+    await apiClient.get("social-impact-page?populate=deep")
   ).data.data.attributes;
+
+  const iconsMapped = icons.data.map((icon: any) => {
+    return icon.attributes.url;
+  });
 
   return {
     props: {
-      bigTitle: "Social impact",
-      title: "Title",
-      paragraph:
-        "We are revolutionizing the market with our innovative and immersive vending machine experiences. We serve premium desserts crafted by professional chocolatiers, accompanied by a visually stunning robotic show.",
-      icons: [
-        "https://i.ibb.co/TrgwfNt/Rectangle-589.png",
-        "https://i.ibb.co/TrgwfNt/Rectangle-589.png",
-        "https://i.ibb.co/TrgwfNt/Rectangle-589.png",
-        "https://i.ibb.co/TrgwfNt/Rectangle-589.png",
-      ],
+      bigTitle,
+      title,
+      paragraph,
+      icons: iconsMapped,
     },
   };
 };

@@ -14,7 +14,6 @@ interface ContactPageProps {
   bigTitle: string;
   title: string;
   paragraph: string;
-  imageNextToText: string;
 }
 const ContactPage = ({ bigTitle, title, paragraph }: ContactPageProps) => {
   return (
@@ -43,17 +42,15 @@ const ContactPage = ({ bigTitle, title, paragraph }: ContactPageProps) => {
 export const getServerSideProps: GetServerSideProps<ContactPageProps> = async (
   context
 ) => {
-  const { bigTitle, title, paragraph, imageNextToText } = (
-    await apiClient.get("about?populate=deep")
+  const { bigTitle, title, paragraph } = (
+    await apiClient.get("contact-page?populate=deep")
   ).data.data.attributes;
 
   return {
     props: {
-      bigTitle: "Contact us",
-      title: "get in touch with us: contact us today!",
-      paragraph:
-        "We are revolutionizing the market with our innovative and immersive vending machine experiences. We serve premium desserts crafted by professional chocolatiers, accompanied by a visually stunning robotic show. \n\nemail:\n tel:",
-      imageNextToText: imageNextToText.data.attributes.url,
+      bigTitle,
+      title,
+      paragraph,
     },
   };
 };

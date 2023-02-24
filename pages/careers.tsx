@@ -69,26 +69,18 @@ const careers = ({ bigTitle, title, paragraph, jobs }: carrersProps) => {
 export const getServerSideProps: GetServerSideProps<carrersProps> = async (
   context
 ) => {
-  const { bigTitle, title, paragraph, icons } = (
-    await apiClient.get("about?populate=deep")
+  const { bigTitle, title, paragraph, job } = (
+    await apiClient.get("careers-page?populate=deep")
   ).data.data.attributes;
+
+  console.log(job);
 
   return {
     props: {
-      bigTitle: "Careers",
-      title: "Title",
-      paragraph:
-        "We are revolutionizing the market with our innovative and immersive vending machine experiences. We serve premium desserts crafted by professional chocolatiers, accompanied by a visually stunning robotic show.",
-      jobs: [
-        "title",
-        "title",
-        "title",
-        "title",
-        "title",
-        "title",
-        "title",
-        "title",
-      ],
+      bigTitle,
+      title,
+      paragraph,
+      jobs: job.map((job: { id: number; job: string }) => job.job),
     },
   };
 };
