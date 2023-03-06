@@ -32,3 +32,9 @@ html {
   font-weight: 400;
   color: #fff;
 }
+
+@media only screen and (max-width: 768px) {
+  .ReactModal__Content {
+    height: 60%;
+  }
+}
