@@ -52,6 +52,7 @@ export const getServerSideProps: GetServerSideProps<HomeStaticData> = async (
     heroText: Hero.heroText,
     videoButtonText: Hero.videoButtonText,
     buzzwords: Hero.buzzwords,
+    videoModalContentUrl: Hero.videoModalContentUrl,
   };
 
   const HomeAboutProps: HomeAboutProps = {

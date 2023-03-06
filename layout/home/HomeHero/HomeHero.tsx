@@ -1,7 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import NextBackgroundImage from "../../../components/NextBackgroundImage/NextBackgroundImage";
 import TransitioningText from "../../../components/TransitioningText/TransitioningText";
+import Modal from "react-modal";
+
 import styles from "./HomeHero.module.css";
+import PipesterIllustration from "../../../components/PipesterIllustration/PipesterIllustration";
+import Embed from "react-tiny-oembed";
+import { pipesterColors } from "../../../theme/colors";
 
 export interface HomeHeroProps {
   image: string;
@@ -9,6 +14,7 @@ export interface HomeHeroProps {
   heroText: string;
   videoButtonText: string;
   buzzwords: Buzzword[];
+  videoModalContentUrl: string;
 }
 interface Buzzword {
   buzzword: string;
@@ -25,6 +31,7 @@ export const HomeHero = ({
   image,
   videoButtonText,
   buzzwords,
+  videoModalContentUrl,
 }: HomeHeroProps) => {
   const [textDuoIndex, setTextDuoIndex] = useState(0);
 
@@ -46,14 +53,51 @@ export const HomeHero = ({
     return heroText.split("$");
   }, [heroText]);
 
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+  Modal.setAppElement("#__next");
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   return (
     <header className={styles.header}>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        bodyOpenClassName={styles.videoModalBody}
+        style={{
+          overlay: { zIndex: 30 },
+          content: {
+            zIndex: 50,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            overflow: "hidden",
+          },
+        }}
+        shouldCloseOnOverlayClick={true}
+      >
+        <PipesterIllustration
+          color={pipesterColors.orange}
+          className={styles.videoModalBackground}
+        />
+        <div className={styles.videoModalContent}>
+          <Embed
+            options={{ align: "center", maxWidth: "100%", maxHeight: "100%" }}
+            url={videoModalContentUrl}
+          />
+        </div>
+      </Modal>
       <NextBackgroundImage
         image={image}
         background={
           "linear-gradient(0deg, rgba(82, 45, 30, 0.3), rgba(82, 45, 30, 0.3))"
         }
       />
+
       <div className={styles.heroContent}>
         <h2 className={styles.title}>{heroTitle}</h2>
         <h2 className={styles.heroTitle}>
@@ -74,7 +118,9 @@ export const HomeHero = ({
           />
         </h2>
 
-        <h5 className={styles.watchVideo}>{videoButtonText}</h5>
+        <h5 className={styles.watchVideo} onClick={openModal}>
+          {videoButtonText}
+        </h5>
       </div>
     </header>
   );

@@ -7,12 +7,18 @@ import FooterItem from "./FooterItem/FooterItem";
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <Link href={"#"} style={{ textDecoration: "none" }}>
+      <Link href={"/about"} style={{ textDecoration: "none" }}>
         <FooterItem title="About us" />
       </Link>
-      <FooterItem title="Carreers" />
-      <FooterItem title="Social Impact" />
-      <FooterItem title="Contact us" />
+      <Link href={"/careers"} style={{ textDecoration: "none" }}>
+        <FooterItem title="Careers" />
+      </Link>
+      <Link href={"/social-impact"} style={{ textDecoration: "none" }}>
+        <FooterItem title="Social Impact" />
+      </Link>
+      <Link href={"/contact"} style={{ textDecoration: "none" }}>
+        <FooterItem title="Contact us" />
+      </Link>
     </footer>
   );
 };

@@ -43,6 +43,30 @@
   cursor: pointer;
 }
 
+.videoModal {
+  z-index: 20;
+}
+
+.videoModalBackground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: scale(4);
+  overflow: hidden;
+}
+
+.videoModalContent {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.videoModalBody {
+  background-color: red;
+}
+
 @media only screen and (max-width: 768px) {
   .header {
     height: 65vh;
@@ -67,5 +91,12 @@
 
   .watchVideo {
     font-size: 1.3em;
+  }
+
+  .videoModalBackground {
+    transform: scale(13);
+  }
+
+  .videoModalContent {
   }
 }
